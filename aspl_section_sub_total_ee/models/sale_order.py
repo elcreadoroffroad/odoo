@@ -1,4 +1,13 @@
 # -*- coding: utf-8 -*-
+##############################################################################
+# Author      : Acespritech Solutions Pvt. Ltd. (<www.acespritech.com>)
+# Copyright(c): 2012-Present Acespritech Solutions Pvt. Ltd.
+# All Rights Reserved.
+#
+# This program is copyright property of the author mentioned above.
+# You can`t redistribute it and/or modify it.
+#
+##############################################################################
 from odoo import models, fields, api
 
 
@@ -8,7 +17,7 @@ class SaleOrder(models.Model):
     section_ids = fields.One2many(
         'section.line', 'sale_order_id', "Sections")
 
-    @api.model
+    @api.model_create_multi
     def create(self, vals):
         res = super(SaleOrder, self).create(vals)
         section_dict = {}
@@ -78,3 +87,5 @@ class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
 
     section_total = fields.Char('Section total', default='0.00')
+
+# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4
