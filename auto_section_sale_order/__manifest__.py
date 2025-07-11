@@ -2,6 +2,7 @@
 {
     'name': 'Auto Section Sale Order',
     'version': '1.0',
+    'license': 'LGPL-3',
     'summary': """
 This module allows you to define the section inside the product. once you select the the product in sale order line 
 save the sale order it will move sale order lines to the respected section define in the products. it will also manage 
